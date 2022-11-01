@@ -2,13 +2,21 @@
 
 namespace lzw
 {
+    /**
+     * @brief Construct a new Cqueue:: Cqueue object
+     *
+     * @param capacity Total capacity of circular queue
+     */
     Cqueue::Cqueue(int capacity) : capacity_(capacity)
     {
         q_.reserve(capacity);
     }
 
-    Cqueue::~Cqueue() {}
-
+    /**
+     * @brief Write a bit into circular queue
+     *
+     * @param b
+     */
     void Cqueue::write(bool b)
     {
         if (written_ < capacity_)
@@ -19,20 +27,33 @@ namespace lzw
         }
     }
 
+    /**
+     * @brief Check whether the queue contains a number of valid bits
+     *
+     * @param i Number of bits
+     * @return true
+     * @return false
+     */
     bool Cqueue::contains(int i)
     {
         return written_ >= i;
     }
 
+    /**
+     * @brief Consume a bit from the queue.
+     *
+     * @return true
+     * @return false
+     */
     bool Cqueue::read()
     {
+        bool bit = false;
         if (written_ > 0)
         {
-            bool ret = q_[read_idx];
+            bit = q_[read_idx];
             read_idx = (read_idx + 1) % capacity_;
             written_--;
-            return ret;
         }
-        return false;
+        return bit;
     }
 }
