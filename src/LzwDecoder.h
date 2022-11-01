@@ -24,11 +24,10 @@ namespace lzw
         void reset_dict_();
 
         int cw_width_;
-        int dict_idx_ = 256;
+        int dict_entry_idx_;
         const int dict_capacity_;
-        std::vector<std::string> cw_dict_;
-
-        static const int s_default_dict_size = 256;
+        const int default_dict_size_ = 256;
+        std::vector<std::string> dict_;
     };
 
 }

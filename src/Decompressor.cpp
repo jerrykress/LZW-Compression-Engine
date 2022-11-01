@@ -21,5 +21,6 @@ int main(int argc, char **argv)
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<float> duration = end - start;
     std::cout << "Decoded " << argc - 1 << " files in " << duration.count() << " seconds\n";
+
     return 0;
 }
