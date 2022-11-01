@@ -21,7 +21,7 @@ namespace lzw
     void Decoder::decode(std::string filename)
     {
         std::ifstream file_in(filename, std::ifstream::in | std::ifstream::binary);
-        std::ofstream file_out({filename.begin(), filename.end() - 2}, std::ofstream::out | std::ofstream::binary);
+        std::ofstream file_out(filename.substr(0, filename.size() - 2), std::ofstream::out | std::ofstream::binary);
 
         // circular queue, size of multiple of 8
         Cqueue bit_q(std::ceil(cw_width_ / 8.0) * 8);
