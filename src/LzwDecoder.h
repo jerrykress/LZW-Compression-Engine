@@ -20,7 +20,6 @@ namespace lzw
         Decoder(int cw_width, int default_dict_size = 256);
         Decoder(const Decoder &that) = delete;
         Decoder &operator=(Decoder &that) = delete;
-        ~Decoder(){};
 
         void decode(std::string filename);
 

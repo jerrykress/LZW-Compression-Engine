@@ -15,10 +15,10 @@ namespace lzw
         Cqueue(int capacity);
         Cqueue(const Cqueue &that) = delete;
         Cqueue &operator=(Cqueue &that) = delete;
-        ~Cqueue(){};
 
         void write(bool b);
         bool contains(int i);
+        int available();
         bool read();
 
     private:

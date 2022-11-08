@@ -40,6 +40,16 @@ namespace lzw
     }
 
     /**
+     * @brief Return available number of bits
+     *
+     * @return int
+     */
+    int Cqueue::available()
+    {
+        return written_;
+    }
+
+    /**
      * @brief Consume a bit from the queue.
      *
      * @return true

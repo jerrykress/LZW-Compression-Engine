@@ -4,11 +4,14 @@
 #include <chrono>
 #include <iostream>
 #include "LzwDecoder.h"
+#include "LzwEncoder.h"
+
 #define DECODER_CW_WIDTH 12
 
 int main(int argc, char **argv)
 {
     lzw::Decoder decoder(DECODER_CW_WIDTH);
+    lzw::Encoder encoder(DECODER_CW_WIDTH);
 
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -18,6 +21,7 @@ int main(int argc, char **argv)
         {
             std::cout << "[+] " << argv[i] << "\n";
             decoder.decode(argv[i]);
+            // encoder.encode(argv[i]);
         }
     }
 
