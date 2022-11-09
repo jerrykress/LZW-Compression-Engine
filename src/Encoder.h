@@ -7,7 +7,7 @@
 #include <fstream>
 #include <unordered_map>
 
-#include "CircularQueue.h"
+#include "Cqueue.h"
 
 namespace lzw
 {

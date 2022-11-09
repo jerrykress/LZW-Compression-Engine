@@ -1,4 +1,4 @@
-#include "LzwDecoder.h"
+#include "Decoder.h"
 
 namespace lzw
 {
@@ -24,7 +24,7 @@ namespace lzw
         std::ofstream file_out(filename.substr(0, filename.size() - 2), std::ofstream::out | std::ofstream::binary);
 
         // circular queue, size of multiple of 8
-        Cqueue bit_q(std::ceil(cw_width_ / 8.0) * 8);
+        Cqueue bit_q(std::ceil(cw_width_ / 8.0) * 16);
         char char_buf;
 
         reset_dict_();

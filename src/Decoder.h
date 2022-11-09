@@ -5,7 +5,7 @@
 #include <fstream>
 #include <math.h>
 #include <numeric>
-#include "CircularQueue.h"
+#include "Cqueue.h"
 
 namespace lzw
 {
